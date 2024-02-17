@@ -1,0 +1,36 @@
+{
+  "name": "@nathanjhood/node-curl-addon",
+  "version": "1.0.0",
+  "description": "cURL as NAPI Addon",
+  "main": "index.js",
+  "repository": "https://github.com/nathanjhood/node-curl-addon.git",
+  "author": "Nathan J. Hood",
+  "license": "MIT",
+  "scripts": {
+        "start":       "node ./index.js",
+        "install":     "cmake-js install     --CDnode_curl_addon_IS_INSTALLABLE:BOOL=TRUE --CDBUILD_TESTS:BOOL=TRUE  --CDCMAKE_INSTALL_PREFIX:PATH=./dist --generator Ninja",
+        "postinstall": "cmake-js compile     --CDnode_curl_addon_IS_INSTALLABLE:BOOL=TRUE --CDBUILD_TESTS:BOOL=TRUE  --CDCMAKE_INSTALL_PREFIX:PATH=./dist --generator Ninja",
+        "configure":   "cmake-js configure   --CDnode_curl_addon_IS_INSTALLABLE:BOOL=TRUE --CDBUILD_TESTS:BOOL=TRUE  --CDCMAKE_INSTALL_PREFIX:PATH=./dist --generator Ninja",
+        "reconfigure": "cmake-js reconfigure --CDnode_curl_addon_IS_INSTALLABLE:BOOL=TRUE --CDBUILD_TESTS:BOOL=TRUE  --CDCMAKE_INSTALL_PREFIX:PATH=./dist --generator Ninja",
+        "build":       "cmake-js build",
+        "rebuild":     "cmake-js rebuild",
+        "clean":       "cmake-js clean --generator Ninja && rm -rvf ./dist",
+        "wipe":        "cmake-js clean --generator Ninja && rm -rvf ./node_modules",
+
+        "ctest":       "ctest --test-dir ./build --rerun-failed --output-on-failure --verbose",
+        "cpack":       "cpack --config   ./build/CPackSourceConfig.cmake -B ./dist",
+        "cdist":       "cpack --config   ./build/CPackConfig.cmake       -B ./dist",
+
+        "curl:get":    "node -p \"const addon = require('./index'); addon.get( 'https://httpbin.org/anything', /** follow redirects? */ true);\"",
+        "curl:post":   "node -p \"const addon = require('./index'); addon.post('https://httpbin.org/anything', 'name=nathanjhood&project=node_curl_addon');\""
+    },
+    "dependencies": {
+        "cmake-js": "https://github.com/nathanjhood/cmake-js#cmakejs_cmake_api",
+        "node-addon-api": "^7.1.0",
+        "node-api-headers": "^1.1.0"
+    },
+    "devDependencies": {
+		"@types/node": "^20.11.14",
+		"typescript": "^5.3.3"
+    }
+}

@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 project(node_curl_addon VERSION 1.0.0)
 
 if(NOT DEFINED CMAKE_JS_VERSION)
-  list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/node_modules/cmake-js/share/cmake")
+  list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/node_modules/@nathanjhood/cmake-js/share/cmake")
 endif()
 
 # Get CURL::libcurl

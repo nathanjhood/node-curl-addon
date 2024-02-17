@@ -25,7 +25,7 @@
         "curl:post":   "node -p \"const addon = require('./index'); addon.post('https://httpbin.org/anything', 'name=nathanjhood&project=node_curl_addon');\""
     },
     "dependencies": {
-        "cmake-js": "https://github.com/nathanjhood/cmake-js",
+        "@nathanjhood/cmake-js": "https://github.com/nathanjhood/cmake-js",
         "node-addon-api": "^7.1.0",
         "node-api-headers": "^1.1.0"
     },

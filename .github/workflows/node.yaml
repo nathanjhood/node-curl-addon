@@ -62,6 +62,7 @@ jobs:
         if: ${{ !matrix.docker-arch }}
         shell: bash
         run: |
+          curl --version
           npm install
           npm test
         env:
@@ -82,14 +83,17 @@ jobs:
             if command -v apt-get &> /dev/null
             then
               apt-get update
-              apt-get install -y cmake
+              apt-get install -y cmake curl
+              curl --version
             elif command -v apk &> /dev/null
             then
               apk update
-              apk add cmake make g++ gcc
+              apk add cmake make g++ gcc curl
+              curl --version
             fi
 
             cd /work
 
+            curl --version
             npm install
             npm test

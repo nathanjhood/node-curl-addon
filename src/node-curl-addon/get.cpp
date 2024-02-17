@@ -14,11 +14,11 @@
 /**
  * @brief Adapted from https://curl.se/libcurl/c/simple.html
  *
- * @param url The HTTP URL to send the POST request to.
+ * @param url The HTTP URL to send the GET request to.
  * @param follow Whether to follow redirected URL requests.
  * @return int
  */
-int node_curl_addon_post(const char* url, const bool& follow)
+int node_curl_addon_get(const char* url, const bool& follow)
 {
   CURL *curl;
   CURLcode res;

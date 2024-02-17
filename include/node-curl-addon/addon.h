@@ -15,6 +15,6 @@
 int node_curl_addon_get(const char* url, const bool& follow);
 
 /** Adapted from https://curl.se/libcurl/c/http-post.html */
-int node_curl_addon_get(const char* url, const char* data);
+int node_curl_addon_post(const char* url, const char* data);
 
 #endif // NODE_CURL_ADDON_H_INCLUDED

@@ -63,8 +63,8 @@ jobs:
         shell: bash
         run: |
           curl --version
-          yarn install
-          yarn test
+          npm install
+          npm test
         env:
           CI: true
           npm_config_build_from_source: true
@@ -95,5 +95,5 @@ jobs:
             cd /work
 
             curl --version
-            yarn install
-            yarn test
+            npm install
+            npm test

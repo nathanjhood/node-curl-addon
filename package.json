@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
         "start":       "node ./index.js",
-
+        "install":     "cmake-js install     --CDnode_curl_addon_IS_INSTALLABLE:BOOL=TRUE --CDBUILD_TESTS:BOOL=TRUE  --CDCMAKE_INSTALL_PREFIX:PATH=./dist",
         "postinstall": "cmake-js compile     --CDnode_curl_addon_IS_INSTALLABLE:BOOL=TRUE --CDBUILD_TESTS:BOOL=TRUE  --CDCMAKE_INSTALL_PREFIX:PATH=./dist",
         "configure":   "cmake-js configure   --CDnode_curl_addon_IS_INSTALLABLE:BOOL=TRUE --CDBUILD_TESTS:BOOL=TRUE  --CDCMAKE_INSTALL_PREFIX:PATH=./dist",
         "reconfigure": "cmake-js reconfigure --CDnode_curl_addon_IS_INSTALLABLE:BOOL=TRUE --CDBUILD_TESTS:BOOL=TRUE  --CDCMAKE_INSTALL_PREFIX:PATH=./dist",

@@ -181,3 +181,6 @@ dist
 
 # Custom
 !lib
+build
+package-lock.json
+yarn.lock

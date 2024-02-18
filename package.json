@@ -7,33 +7,32 @@
   "author": "Nathan J. Hood",
   "license": "MIT",
   "scripts": {
-        "start":       "node ./index.js",
-        "install":     "cmake-js install     --CDnode_curl_addon_IS_INSTALLABLE:BOOL=TRUE --CDBUILD_TESTS:BOOL=TRUE  --CDCMAKE_INSTALL_PREFIX:PATH=./dist",
-        "postinstall": "cmake-js compile     --CDnode_curl_addon_IS_INSTALLABLE:BOOL=TRUE --CDBUILD_TESTS:BOOL=TRUE  --CDCMAKE_INSTALL_PREFIX:PATH=./dist",
-        "configure":   "cmake-js configure   --CDnode_curl_addon_IS_INSTALLABLE:BOOL=TRUE --CDBUILD_TESTS:BOOL=TRUE  --CDCMAKE_INSTALL_PREFIX:PATH=./dist",
-        "reconfigure": "cmake-js reconfigure --CDnode_curl_addon_IS_INSTALLABLE:BOOL=TRUE --CDBUILD_TESTS:BOOL=TRUE  --CDCMAKE_INSTALL_PREFIX:PATH=./dist",
-        "build":       "cmake-js build",
-        "rebuild":     "cmake-js rebuild",
-        "clean":       "cmake-js clean && rm -rvf ./dist",
-        "wipe":        "cmake-js clean && rm -rvf ./node_modules",
+    "start":       "node ./index.js",
+    "test":       "ctest --test-dir ./build --rerun-failed --output-on-failure --verbose",
 
-        "ctest":       "ctest --test-dir ./build --rerun-failed --output-on-failure --verbose",
-        "cpack":       "cpack --config   ./build/CPackSourceConfig.cmake -B ./dist",
-        "cdist":       "cpack --config   ./build/CPackConfig.cmake       -B ./dist",
+    "install":     "cmake-js install     --CDnode_curl_addon_IS_INSTALLABLE:BOOL=TRUE --CDBUILD_TESTS:BOOL=TRUE  --CDCMAKE_INSTALL_PREFIX:PATH=./dist",
+    "postinstall": "cmake-js compile     --CDnode_curl_addon_IS_INSTALLABLE:BOOL=TRUE --CDBUILD_TESTS:BOOL=TRUE  --CDCMAKE_INSTALL_PREFIX:PATH=./dist",
+    "configure":   "cmake-js configure   --CDnode_curl_addon_IS_INSTALLABLE:BOOL=TRUE --CDBUILD_TESTS:BOOL=TRUE  --CDCMAKE_INSTALL_PREFIX:PATH=./dist",
+    "reconfigure": "cmake-js reconfigure --CDnode_curl_addon_IS_INSTALLABLE:BOOL=TRUE --CDBUILD_TESTS:BOOL=TRUE  --CDCMAKE_INSTALL_PREFIX:PATH=./dist",
+    "build":       "cmake-js build",
+    "rebuild":     "cmake-js rebuild",
+    "clean":       "cmake-js clean && rm -rvf ./dist",
+    "wipe":        "cmake-js clean && rm -rvf ./node_modules",
 
-        "curl:get":    "node -p \"const addon = require('./index'); addon.get( 'https://httpbin.org/anything', /** follow redirects? */ true);\"",
-        "curl:post":   "node -p \"const addon = require('./index'); addon.post('https://httpbin.org/anything', 'name=nathanjhood&project=node_curl_addon');\""
-    },
-    "dependencies": {
-        "cmake-js": "https://github.com/nathanjhood/cmake-js#cmakejs_cmake_api",
-        "node-addon-api": "^6.1.0",
-        "node-api-headers": "^1.1.0"
-    },
-    "devDependencies": {
-		"@types/node": "^20.11.14",
-		"typescript": "^5.3.3"
-    },
-    "engines": {
-		"node": ">= 14.15.0"
-	}
+    "ctest":       "ctest --test-dir ./build --rerun-failed --output-on-failure --verbose",
+    "cpack":       "cpack --config   ./build/CPackSourceConfig.cmake -B ./dist",
+    "cdist":       "cpack --config   ./build/CPackConfig.cmake       -B ./dist",
+
+    "curl:get":    "node -p \"const addon = require('./index'); addon.get( 'https://httpbin.org/anything', /** follow redirects? */ true);\"",
+    "curl:post":   "node -p \"const addon = require('./index'); addon.post('https://httpbin.org/anything', 'name=nathanjhood&project=node_curl_addon');\""
+  },
+  "dependencies": {
+    "cmake-js": "https://github.com/nathanjhood/cmake-js#cmakejs_cmake_api",
+    "node-addon-api": "^6.1.0",
+    "node-api-headers": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.14",
+    "typescript": "^5.3.3"
+  }
 }
